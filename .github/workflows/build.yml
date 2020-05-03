@@ -13,10 +13,8 @@ on:
 
 jobs:
   test-with-coverage: # generate coverage report for 2.12.8 on jdk1.8
-    continue-on-error: ${{ matrix.use_netty }}
     runs-on: ubuntu-latest
-    env:
-      USE_NETTY_SNAPSHOT: ${{ matrix.use_netty }}
+    continue-on-error: ${{ matrix.use_netty }}
     strategy:
       fail-fast: false
       max-parallel: 10
@@ -54,7 +52,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.dodo
-          key: ${{ runner.os }}-dodo-${{ hashFiles('**/*.*') }}
+          key: ${{ runner.os }}-$GITHUB_REPOSITORY-$GITHUB_REF-dodo
       - name: unset/sbt-opts # default $SBT_OPTS is irrelevant to sbt launcher
         run: |
           unset SBT_OPTS
@@ -84,15 +82,15 @@ jobs:
         if: ${{ success() && matrix.java == 'openjdk@1.8' }}
         uses: codecov/codecov-action@v1
   test:
-    continue-on-error: ${{ matrix.use_netty || matrix.experimental }}
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.use_netty }}
     strategy:
       fail-fast: false
       max-parallel: 10
       matrix:
         java: [openjdk@1.8, openjdk@1.11]
         # scala: [2.11.12, 2.13.1]
-        # We don't run the 2.11.x series with finagle because the build matrix becomes too large. 
+        # We don't run the 2.11.x series with finagle because the build matrix becomes too large.
         scala: [2.13.1]
         use_netty: [true, false]
         project: [finagle-base-http, finagle-benchmark, finagle-benchmark-thrift, finagle-core, finagle-example, finagle-exception, finagle-exp, finagle-grpc-context, finagle-http, finagle-http2, finagle-init, finagle-integration, finagle-memcached, finagle-mux, finagle-mysql, finagle-netty4, finagle-netty4-http, finagle-opencensus-tracing, finagle-partitioning, finagle-redis, finagle-serversets, finagle-stats, finagle-stats-core, finagle-thrift, finagle-thriftmux, finagle-toggle, finagle-tunable, finagle-zipkin-core, finagle-zipkin-scribe]
@@ -125,7 +123,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.dodo
-          key: ${{ runner.os }}-dodo-${{ hashFiles('**/*.*') }}
+          key: ${{ runner.os }}-$GITHUB_REPOSITORY-$GITHUB_REF-dodo
       - name: unset/sbt-opts # default $SBT_OPTS is irrelevant to sbt launcher
         run: |
           unset SBT_OPTS
