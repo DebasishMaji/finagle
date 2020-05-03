@@ -129,12 +129,12 @@ jobs:
         run: |
           curl -s https://raw.githubusercontent.com/twitter/dodo/develop/bin/build | bash -s -- --no-test --scala-version ${{ matrix.scala }} finagle
       - name: compile/finagle-memached # don't test these projects because they require a running memcached instance
-          run: |
-            ./sbt ++${{ matrix.scala }} finagle-memcached/test:compile
-            - name: netty/setup
-              if: ${{ matrix.use_netty }}
-              run: |
-                source ./netty-snapshot-env.sh true
+        run: |
+          ./sbt ++${{ matrix.scala }} finagle-memcached/test:compile
+      - name: netty/setup
+        if: ${{ matrix.use_netty }}
+        run: |
+          source ./netty-snapshot-env.sh true
       - name: test
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
