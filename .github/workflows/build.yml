@@ -19,6 +19,7 @@ jobs:
       USE_NETTY_SNAPSHOT: ${{ matrix.use_netty }}
     strategy:
       fail-fast: false
+      max-parallel: 10
       matrix:
         java: [openjdk@1.8, openjdk@1.11]
         scala: [2.12.8]
@@ -87,6 +88,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      max-parallel: 10
       matrix:
         java: [openjdk@1.8, openjdk@1.11]
         scala: [2.11.12, 2.13.1]
