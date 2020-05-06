@@ -107,9 +107,9 @@ jobs:
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
       - name: test/with-coverage
-          if: ${{ matrix.coverage == 'true' }}
-          run: |
-            ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
+        if: ${{ matrix.coverage == 'true' }}
+        run: |
+          ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
       - name: test/coverage-report/generate
         if: ${{ matrix.coverage == 'true' }}
         run: |
@@ -183,9 +183,9 @@ jobs:
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
       - name: test/with-coverage
-          if: ${{ matrix.coverage == 'true' }}
-          run: |
-            ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
+        if: ${{ matrix.coverage == 'true' }}
+        run: |
+          ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
       - name: test/coverage-report/generate
         if: ${{ matrix.coverage == 'true' }}
         run: |
@@ -259,9 +259,9 @@ jobs:
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
       - name: test/with-coverage
-          if: ${{ matrix.coverage == 'true' }}
-          run: |
-            ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
+        if: ${{ matrix.coverage == 'true' }}
+        run: |
+          ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
       - name: test/coverage-report/generate
         if: ${{ matrix.coverage == 'true' }}
         run: |
@@ -335,9 +335,9 @@ jobs:
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
       - name: test/with-coverage
-          if: ${{ matrix.coverage == 'true' }}
-          run: |
-            ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
+        if: ${{ matrix.coverage == 'true' }}
+        run: |
+          ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
       - name: test/coverage-report/generate
         if: ${{ matrix.coverage == 'true' }}
         run: |
@@ -411,9 +411,9 @@ jobs:
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
       - name: test/with-coverage
-          if: ${{ matrix.coverage == 'true' }}
-          run: |
-            ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
+        if: ${{ matrix.coverage == 'true' }}
+        run: |
+          ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
       - name: test/coverage-report/generate
         if: ${{ matrix.coverage == 'true' }}
         run: |
@@ -487,9 +487,9 @@ jobs:
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
       - name: test/with-coverage
-          if: ${{ matrix.coverage == 'true' }}
-          run: |
-            ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
+        if: ${{ matrix.coverage == 'true' }}
+        run: |
+          ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
       - name: test/coverage-report/generate
         if: ${{ matrix.coverage == 'true' }}
         run: |
