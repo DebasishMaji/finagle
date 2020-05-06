@@ -82,12 +82,12 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/cache
-          key: ${{ runner.os }}-${{ github.repository }}-${{ github.ref }}-sbt-ivy-cache-
+          key: ${{ runner.os }}-sbt-ivy-cache-
       - name: cache/ivy2-local
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/local/com.twitter
-          key: ${{ runner.os }}-${{ github.repository }}-${{ github.ref }}-sbt-ivy-local-
+          key: ${{ runner.os }}-sbt-ivy-local-
       - name: cache/sbt
         uses: actions/cache@v1
         with:
@@ -159,12 +159,12 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/cache
-          key: ${{ runner.os }}-${{ github.repository }}-${{ github.ref }}-sbt-ivy-cache-
+          key: ${{ runner.os }}-sbt-ivy-cache-
       - name: cache/ivy2-local
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/local/com.twitter
-          key: ${{ runner.os }}-${{ github.repository }}-${{ github.ref }}-sbt-ivy-local-
+          key: ${{ runner.os }}-sbt-ivy-local-
       - name: cache/sbt
         uses: actions/cache@v1
         with:
@@ -236,12 +236,12 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/cache
-          key: ${{ runner.os }}-${{ github.repository }}-${{ github.ref }}-sbt-ivy-cache-
+          key: ${{ runner.os }}-sbt-ivy-cache-
       - name: cache/ivy2-local
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/local/com.twitter
-          key: ${{ runner.os }}-${{ github.repository }}-${{ github.ref }}-sbt-ivy-local-
+          key: ${{ runner.os }}-sbt-ivy-local-
       - name: cache/sbt
         uses: actions/cache@v1
         with:
@@ -313,12 +313,12 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/cache
-          key: ${{ runner.os }}-${{ github.repository }}-${{ github.ref }}-sbt-ivy-cache-
+          key: ${{ runner.os }}-sbt-ivy-cache-
       - name: cache/ivy2-local
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/local/com.twitter
-          key: ${{ runner.os }}-${{ github.repository }}-${{ github.ref }}-sbt-ivy-local-
+          key: ${{ runner.os }}-sbt-ivy-local-
       - name: cache/sbt
         uses: actions/cache@v1
         with:
@@ -390,12 +390,12 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/cache
-          key: ${{ runner.os }}-${{ github.repository }}-${{ github.ref }}-sbt-ivy-cache-
+          key: ${{ runner.os }}-sbt-ivy-cache-
       - name: cache/ivy2-local
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/local/com.twitter
-          key: ${{ runner.os }}-${{ github.repository }}-${{ github.ref }}-sbt-ivy-local-
+          key: ${{ runner.os }}-sbt-ivy-local-
       - name: cache/sbt
         uses: actions/cache@v1
         with:
@@ -467,12 +467,12 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/cache
-          key: ${{ runner.os }}-${{ github.repository }}-${{ github.ref }}-sbt-ivy-cache-
+          key: ${{ runner.os }}-sbt-ivy-cache-
       - name: cache/ivy2-local
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/local/com.twitter
-          key: ${{ runner.os }}-${{ github.repository }}-${{ github.ref }}-sbt-ivy-local-
+          key: ${{ runner.os }}-sbt-ivy-local-
       - name: cache/sbt
         uses: actions/cache@v1
         with:
