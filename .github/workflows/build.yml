@@ -50,7 +50,6 @@ jobs:
   test-1:
     needs: dodo-build
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.netty }}
     strategy:
       fail-fast: false
       matrix:
@@ -103,10 +102,12 @@ jobs:
         run: |
           source ./netty-snapshot-env.sh true
       - name: test
+        continue-on-error: ${{ matrix.netty }}
         if: ${{ matrix.coverage == 'false' }}
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
       - name: test/with-coverage
+        continue-on-error: ${{ matrix.netty }}
         if: ${{ matrix.coverage == 'true' }}
         run: |
           ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
@@ -126,7 +127,6 @@ jobs:
   test-2:
     needs: test-1
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.netty }}
     strategy:
       fail-fast: false
       matrix:
@@ -179,10 +179,12 @@ jobs:
         run: |
           source ./netty-snapshot-env.sh true
       - name: test
+        continue-on-error: ${{ matrix.netty }}
         if: ${{ matrix.coverage == 'false' }}
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
       - name: test/with-coverage
+        continue-on-error: ${{ matrix.netty }}
         if: ${{ matrix.coverage == 'true' }}
         run: |
           ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
@@ -202,7 +204,6 @@ jobs:
   test-3:
     needs: test-2
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.netty }}
     strategy:
       fail-fast: false
       matrix:
@@ -255,10 +256,12 @@ jobs:
         run: |
           source ./netty-snapshot-env.sh true
       - name: test
+        continue-on-error: ${{ matrix.netty }}
         if: ${{ matrix.coverage == 'false' }}
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
       - name: test/with-coverage
+        continue-on-error: ${{ matrix.netty }}
         if: ${{ matrix.coverage == 'true' }}
         run: |
           ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
@@ -278,7 +281,6 @@ jobs:
   test-4:
     needs: test-3
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.netty }}
     strategy:
       fail-fast: false
       matrix:
@@ -331,10 +333,12 @@ jobs:
         run: |
           source ./netty-snapshot-env.sh true
       - name: test
+        continue-on-error: ${{ matrix.netty }}
         if: ${{ matrix.coverage == 'false' }}
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
       - name: test/with-coverage
+        continue-on-error: ${{ matrix.netty }}
         if: ${{ matrix.coverage == 'true' }}
         run: |
           ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
@@ -354,7 +358,6 @@ jobs:
   test-5:
     needs: test-4
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.netty }}
     strategy:
       fail-fast: false
       matrix:
@@ -407,10 +410,12 @@ jobs:
         run: |
           source ./netty-snapshot-env.sh true
       - name: test
+        continue-on-error: ${{ matrix.netty }}
         if: ${{ matrix.coverage == 'false' }}
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
       - name: test/with-coverage
+        continue-on-error: ${{ matrix.netty }}
         if: ${{ matrix.coverage == 'true' }}
         run: |
           ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
@@ -430,7 +435,6 @@ jobs:
   test-6:
     needs: test-5
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.netty }}
     strategy:
       fail-fast: false
       matrix:
@@ -483,10 +487,12 @@ jobs:
         run: |
           source ./netty-snapshot-env.sh true
       - name: test
+        continue-on-error: ${{ matrix.netty }}
         if: ${{ matrix.coverage == 'false' }}
         run: |
           ./sbt ++${{ matrix.scala }} clean "${{ matrix.project }}/test"
       - name: test/with-coverage
+        continue-on-error: ${{ matrix.netty }}
         if: ${{ matrix.coverage == 'true' }}
         run: |
           ./sbt ++${{ matrix.scala }} clean coverage "${{ matrix.project }}/test" coverageReport
