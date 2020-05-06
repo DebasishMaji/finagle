@@ -37,7 +37,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.ivy2/local/com.twitter
-        key: ${{ runner.os }}-sbt-ivy-local-
+          key: ${{ runner.os }}-sbt-ivy-local-
       - name: cache/dodo
         uses: actions/cache@v1
         with:
